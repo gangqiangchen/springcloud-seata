@@ -12,5 +12,7 @@
 
 ```
 eureka-server 注册中心 -> 可扩展为高可用注册注册中心
-
+user 用户中心
+bonus_ppints_01 积分系统 01
+bonus_ppints_02 积分系统 02
 ```
