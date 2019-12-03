@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
@@ -16,6 +17,7 @@ import org.springframework.web.client.RestTemplate;
 
 @EnableEurekaClient
 @SpringBootApplication
+@EnableDiscoveryClient
 @RestController
 public class UserApplication {
 
@@ -31,7 +33,7 @@ public class UserApplication {
     RestTemplate restTemplate() {
         return new RestTemplate();
     }
-    
+
     @Autowired
     RestTemplate restTemplate;
 
@@ -39,7 +41,7 @@ public class UserApplication {
     Integer helloUser() {
         List<Map<String, Object>> maps = jdbcTemplate.queryForList("select * from `user_info`");
         System.out.println(maps.toArray());
-        return restTemplate.getForObject("http://BONUS_POINTS/getScore", Integer.class);
+        return restTemplate.getForObject("http://BONUS-POINTS/getScore", Integer.class);
     }
 
 }
