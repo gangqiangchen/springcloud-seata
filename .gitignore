@@ -25,6 +25,7 @@ hs_err_pid*
 # idea
 *.idea/
 */target
+*/.mvn/
 
 HELP.md
 target/
@@ -52,6 +53,7 @@ target/
 /nbbuild/
 /dist/
 /nbdist/
+
 /.nb-gradle/
 build/
 
