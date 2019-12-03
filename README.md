@@ -9,3 +9,8 @@
 
 ##### springCloud api https://cloud.spring.io/spring-cloud-static/Finchley.SR4/single/spring-cloud.html
 
+
+```
+eureka-server 注册中心 -> 可扩展为高可用注册注册中心
+
+```
