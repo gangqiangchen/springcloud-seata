@@ -16,18 +16,18 @@ user 用户中心
 bonus_ppints_01 积分系统 01
 bonus_ppints_02 积分系统 02
 ```
-> *推荐学习 [https://www.cnblogs.com/haizai/p/11924175.html](https://www.cnblogs.com/haizai/p/11924175.html)*
-> *推荐学习 [https://blog.csdn.net/gududedabai/article/details/82993594](https://blog.csdn.net/gududedabai/article/details/82993594)*
-> *推荐学习 [https://blog.csdn.net/zyndev/article/details/79604395](https://blog.csdn.net/zyndev/article/details/79604395)*
+> 1. 推荐学习 [https://www.cnblogs.com/haizai/p/11924175.html](https://www.cnblogs.com/haizai/p/11924175.html)*
+> 2. 推荐学习 [https://blog.csdn.net/gududedabai/article/details/82993594](https://blog.csdn.net/gududedabai/article/details/82993594)*
+> 3. 推荐学习 [https://blog.csdn.net/zyndev/article/details/79604395](https://blog.csdn.net/zyndev/article/details/79604395)*
 
 > 数据源 mysql 阿里云
 
 > Seata
-```
-github地址 [https://github.com/seata/seata](https://github.com/seata/seata)
-官方文档 [http://seata.io/zh-cn/](http://seata.io/zh-cn/) 中文文档
-新手入门部署指南 [http://seata.io/zh-cn/docs/ops/deploy-guide-beginner.html](http://seata.io/zh-cn/docs/ops/deploy-guide-beginner.html)
 
+1. github地址 [https://github.com/seata/seata](https://github.com/seata/seata)
+2. 官方文档 [http://seata.io/zh-cn/](http://seata.io/zh-cn/) 中文文档
+3. 新手入门部署指南 [http://seata.io/zh-cn/docs/ops/deploy-guide-beginner.html](http://seata.io/zh-cn/docs/ops/deploy-guide-beginner.html)
+```
 maven jar 引入
 <seata.version>0.9.0</seata.version>
 <dependency>
