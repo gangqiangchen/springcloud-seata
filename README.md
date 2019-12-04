@@ -16,5 +16,39 @@ user 用户中心
 bonus_ppints_01 积分系统 01
 bonus_ppints_02 积分系统 02
 ```
+> 推荐学习 https://www.cnblogs.com/haizai/p/11924175.html
+> 推荐学习 https://blog.csdn.net/gududedabai/article/details/82993594
+> 推荐学习 https://blog.csdn.net/zyndev/article/details/79604395
 
 > 数据源 mysql 阿里云
+
+> Seata
+```
+github地址 https://github.com/seata/seata
+官方文档 http://seata.io/zh-cn/ 中文文档
+新手入门部署指南 http://seata.io/zh-cn/docs/ops/deploy-guide-beginner.html
+
+maven jar 引入
+<seata.version>0.9.0</seata.version>
+<dependency>
+    <groupId>io.seata</groupId>
+    <artifactId>seata-all</artifactId>
+    <version>${seata.version}</version>
+</dependency>
+```
+
+## TODO 因为本地jdk原因，分布式事务实现方式采用 LCN分布式事务框架
+
+> LCN分布式事务框架原理详解4.0 https://blog.csdn.net/gududedabai/article/details/83012487
+> http://www.txlcn.org/zh-cn/
+> LCN并不生产事务，LCN只是本地事务的协调者
+
+> txlcn 的使用
+```
+// 事务开启者使用
+@LcnTransaction
+@Transactional
+// 事务参与者使用
+@TxcTransaction(propagation = DTXPropagation.SUPPORTS)
+@Transactional
+``` 
