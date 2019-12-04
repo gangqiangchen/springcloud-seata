@@ -10,6 +10,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,11 +32,17 @@ public class UserApplication {
     @Autowired
     RestTemplate restTemplate;
 
+    @Autowired
+    StringRedisTemplate stringRedisTemplate;
+
     @RequestMapping({"/", "/user"})
-    Integer helloUser() {
+    String helloUser() {
         List<Map<String, Object>> maps = jdbcTemplate.queryForList("select * from `user_info`");
         System.out.println(maps.toArray());
-        return restTemplate.getForObject("http://BONUS-POINTS/getScore", Integer.class);
+
+        stringRedisTemplate.opsForValue().set("aaa", "123");
+//        restTemplate.getForObject("http://BONUS-POINTS/getScore", Integer.class);
+        return stringRedisTemplate.opsForValue().get("aaa");
     }
 
 }
