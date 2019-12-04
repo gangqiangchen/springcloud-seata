@@ -28,12 +28,6 @@ public class UserApplication {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    @Bean
-    @LoadBalanced
-    RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
-
     @Autowired
     RestTemplate restTemplate;
 
