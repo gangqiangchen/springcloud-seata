@@ -52,3 +52,5 @@ maven jar 引入
 @TxcTransaction(propagation = DTXPropagation.SUPPORTS)
 @Transactional
 ``` 
+
+测试Ribbon 使用 RestTemplate 为请求，做txlcn分布式事务，经过两个小时测试，推测RestTemplate 无法正常进行分布式事务。 报错：有null指针，初步推测是RestTemplate 请求时候，无法把全部事务数据专递到位，再使用Feign 测试完成后，做最后结论。
