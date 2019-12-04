@@ -1,5 +1,6 @@
 package com.springcloud.seata.user;
 
+import com.codingapi.txlcn.tc.config.EnableDistributedTransaction;
 import java.util.List;
 import java.util.Map;
 
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+@EnableDistributedTransaction
 @EnableEurekaClient
 @SpringBootApplication
 @EnableDiscoveryClient
