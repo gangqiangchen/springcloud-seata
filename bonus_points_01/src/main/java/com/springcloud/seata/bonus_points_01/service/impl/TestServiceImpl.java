@@ -1,0 +1,27 @@
+package com.springcloud.seata.bonus_points_01.service.impl;
+
+import com.codingapi.txlcn.tc.annotation.DTXPropagation;
+import com.codingapi.txlcn.tc.annotation.TxcTransaction;
+import com.springcloud.seata.bonus_points_01.service.TestService;
+import javax.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Service;
+
+@Service
+@Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
+public class TestServiceImpl implements TestService {
+
+  @Autowired
+  JdbcTemplate jdbcTemplate;
+
+  @TxcTransaction(propagation = DTXPropagation.SUPPORTS)
+  @Transactional
+  @Override
+  public void save() {
+    jdbcTemplate.execute("INSERT INTO `points` VALUES ('3', '2', '0');");
+    System.out.println("其实已经执行完成");
+  }
+}
