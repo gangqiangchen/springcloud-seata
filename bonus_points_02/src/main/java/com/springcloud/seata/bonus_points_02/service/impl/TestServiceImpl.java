@@ -21,7 +21,9 @@ public class TestServiceImpl implements TestService {
   @Transactional
   @Override
   public void save() {
-    jdbcTemplate.execute("INSERT INTO `points` VALUES ('3', '2', '0');");
-    System.out.println("其实已经执行完成");
+//    jdbcTemplate.execute("INSERT INTO `points` VALUES ('3', '2', '0');");
+    System.out.println("bonus_points_02: 开始执行...");
+    jdbcTemplate.execute("INSERT INTO `points` (id, uid, score) VALUES ('3', '2', '0');");
+    System.out.println("bonus_points_02: 执行完成。");
   }
 }
